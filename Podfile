@@ -1,13 +1,14 @@
-platform :ios, '9.1'
+platform :ios, '9.0'
+use_frameworks!
 
-target :Crew, :exclusive => true do
-  pod 'Typhoon', :head
+target 'Crew' do
+    pod 'Alamofire', '~> 3.1.0'
+    pod 'SwiftyJSON', '~> 2.3.0'
+    pod 'Swinject', '0.5'
+    pod 'RealmSwift'
 end
 
-target :CrewTests do
-  pod 'Expecta', '~> 0.2.1'
-  pod 'OCHamcrest'
-  pod 'OCMockito'
+target 'CrewTests' do
+#    pod 'Quick', '0.8.0'
+#    pod 'Nimble', '3.0.0'
 end
-
-inhibit_all_warnings!
