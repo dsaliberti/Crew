@@ -6,6 +6,7 @@ target 'Crew' do
     pod 'SwiftyJSON', '~> 2.3.0'
     pod 'Swinject', '0.5'
     pod 'RealmSwift'
+#    pod 'YSRealmStore'
 end
 
 target 'CrewTests' do

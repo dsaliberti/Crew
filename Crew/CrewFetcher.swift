@@ -17,6 +17,7 @@ struct CrewFetcher {
         
         networking.request { data in
             let contacts = data.map { self.decode($0) }
+            
             response(contacts)
         }
     }

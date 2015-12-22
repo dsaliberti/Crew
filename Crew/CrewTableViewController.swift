@@ -11,9 +11,13 @@ import UIKit
 class CrewTableViewController: UITableViewController {
     
     var crewFetcher: CrewFetcher?
+    var persistence: Persistence?
+    
     private var contacts = [Contact]() {
         didSet {
             tableView.reloadData()
+            persistence = Persistence()
+            persistence!.contacts = contacts
         }
     }
     
@@ -23,6 +27,7 @@ class CrewTableViewController: UITableViewController {
         crewFetcher?.fetch {
             if let contacts = $0 {
                 self.contacts = contacts
+                
             }
             else {
                 let title = "Error"

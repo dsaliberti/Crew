@@ -6,7 +6,7 @@
 //  Copyright © 2015 dsaliberti. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Contact {
     let first_name: String

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DD24DF661C26277A00F922DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD24DF651C26277A00F922DA /* AppDelegate.swift */; };
-		DD24DF6E1C26277A00F922DA /* Crew.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD24DF6C1C26277A00F922DA /* Crew.xcdatamodeld */; };
 		DD24DF701C26277A00F922DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD24DF6F1C26277A00F922DA /* Assets.xcassets */; };
 		DD24DF731C26277A00F922DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD24DF711C26277A00F922DA /* LaunchScreen.storyboard */; };
 		DD24DF7E1C26277A00F922DA /* CrewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD24DF7D1C26277A00F922DA /* CrewTests.swift */; };
@@ -17,6 +16,8 @@
 		DDA0DDCD1C27A712005CC5E5 /* ContactProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0DDCC1C27A711005CC5E5 /* ContactProtocol.swift */; };
 		DDA0DDCF1C27B142005CC5E5 /* ContactViewModelFromContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0DDCE1C27B142005CC5E5 /* ContactViewModelFromContact.swift */; };
 		DDA0DDD11C27BB0A005CC5E5 /* DetailContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0DDD01C27BB0A005CC5E5 /* DetailContactViewController.swift */; };
+		DDA0DDD31C28D238005CC5E5 /* PersistenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0DDD21C28D238005CC5E5 /* PersistenceProtocol.swift */; };
+		DDA0DDD51C28E1F4005CC5E5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0DDD41C28E1F4005CC5E5 /* Persistence.swift */; };
 		DDF584E71C26E97600BB41B7 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF584E61C26E97600BB41B7 /* Contact.swift */; };
 		DDF584E91C26EA3100BB41B7 /* CrewFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF584E81C26EA3100BB41B7 /* CrewFetcher.swift */; };
 		DDF584EC1C26ECBB00BB41B7 /* NetworkingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF584EB1C26ECBB00BB41B7 /* NetworkingProtocol.swift */; };
@@ -52,7 +53,6 @@
 		9059DDB400E1A465DB811928 /* Pods_Crew.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crew.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD24DF621C26277A00F922DA /* Crew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD24DF651C26277A00F922DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DD24DF6D1C26277A00F922DA /* Crew.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Crew.xcdatamodel; sourceTree = "<group>"; };
 		DD24DF6F1C26277A00F922DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD24DF721C26277A00F922DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD24DF741C26277A00F922DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +67,8 @@
 		DDA0DDCC1C27A711005CC5E5 /* ContactProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactProtocol.swift; sourceTree = "<group>"; };
 		DDA0DDCE1C27B142005CC5E5 /* ContactViewModelFromContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewModelFromContact.swift; sourceTree = "<group>"; };
 		DDA0DDD01C27BB0A005CC5E5 /* DetailContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailContactViewController.swift; sourceTree = "<group>"; };
+		DDA0DDD21C28D238005CC5E5 /* PersistenceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceProtocol.swift; sourceTree = "<group>"; };
+		DDA0DDD41C28E1F4005CC5E5 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		DDF584E61C26E97600BB41B7 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		DDF584E81C26EA3100BB41B7 /* CrewFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrewFetcher.swift; sourceTree = "<group>"; };
 		DDF584EB1C26ECBB00BB41B7 /* NetworkingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingProtocol.swift; sourceTree = "<group>"; };
@@ -198,12 +200,13 @@
 		DDF584DC1C263F7E00BB41B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DD24DF6C1C26277A00F922DA /* Crew.xcdatamodeld */,
 				DDF584E61C26E97600BB41B7 /* Contact.swift */,
 				DDF584E81C26EA3100BB41B7 /* CrewFetcher.swift */,
 				DDF584EB1C26ECBB00BB41B7 /* NetworkingProtocol.swift */,
 				DDF584ED1C26ED0C00BB41B7 /* Network.swift */,
 				DDF584EF1C26ED5A00BB41B7 /* ContactsMap.swift */,
+				DDA0DDD21C28D238005CC5E5 /* PersistenceProtocol.swift */,
+				DDA0DDD41C28E1F4005CC5E5 /* Persistence.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -402,10 +405,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDF584F61C26F2B500BB41B7 /* CrewTableViewController.swift in Sources */,
+				DDA0DDD31C28D238005CC5E5 /* PersistenceProtocol.swift in Sources */,
 				DDF584E71C26E97600BB41B7 /* Contact.swift in Sources */,
+				DDA0DDD51C28E1F4005CC5E5 /* Persistence.swift in Sources */,
 				DDF584F01C26ED5A00BB41B7 /* ContactsMap.swift in Sources */,
 				DDA0DDCD1C27A712005CC5E5 /* ContactProtocol.swift in Sources */,
-				DD24DF6E1C26277A00F922DA /* Crew.xcdatamodeld in Sources */,
 				DDF584EC1C26ECBB00BB41B7 /* NetworkingProtocol.swift in Sources */,
 				DDA0DDCF1C27B142005CC5E5 /* ContactViewModelFromContact.swift in Sources */,
 				DDF584E91C26EA3100BB41B7 /* CrewFetcher.swift in Sources */,
@@ -663,19 +667,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		DD24DF6C1C26277A00F922DA /* Crew.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				DD24DF6D1C26277A00F922DA /* Crew.xcdatamodel */,
-			);
-			currentVersion = DD24DF6D1C26277A00F922DA /* Crew.xcdatamodel */;
-			path = Crew.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = DD24DF5A1C26277A00F922DA /* Project object */;
 }
