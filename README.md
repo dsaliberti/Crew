@@ -1,7 +1,8 @@
 # Crew
 A person collection for iOS
 
-Must
+## Must
+
 ✅ get remote contacts
 
 - save it in background for offline access
@@ -14,13 +15,13 @@ Must
 
 ✅ in the detail screen2 the user can change back de navigation, see a title and labels for the contact fields: first_name, surname, address, phone_number, email, createdAt and updatedAt
 
-Should
+## Should
 - the contact should have an adorable avatar
 
-Would be good
+## Would be good
 - store local data using sqlite or realm databases
 
-The tests should cover
+## The tests should cover
 - get remote fail
 - get remote empty
 - get remote wierd
