@@ -11,18 +11,26 @@ import UIKit
 class CrewTableViewController: UITableViewController {
     
     var crewFetcher: CrewFetcher?
-    var persistence: Persistence?
-    
-    private var contacts = [Contact]() {
+    let defaults = NSUserDefaults.standardUserDefaults()
+    let contactKey = "contacts"
+    var contacts = [Contact]() {
         didSet {
+            
+//            let data = NSKeyedArchiver.archivedDataWithRootObject(contacts)
+//            NSUserDefaults.standardUserDefaults().setObject(data, forKey: contactKey)
+            
             tableView.reloadData()
-            persistence = Persistence()
-            persistence!.contacts = contacts
         }
     }
     
+//    func getSavedContacts() {
+//        self.contacts = defaults.objectForKey(contactKey) as! [Contact]
+//        self.tableView.reloadData()
+//    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        //self.getSavedContacts()
         
         crewFetcher?.fetch {
             if let contacts = $0 {
