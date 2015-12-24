@@ -11,27 +11,28 @@ import UIKit
 class CrewTableViewController: UITableViewController {
     
     var crewFetcher: CrewFetcher?
-    let defaults = NSUserDefaults.standardUserDefaults()
-    let contactKey = "contacts"
     var contacts = [Contact]() {
         didSet {
-            
-//            let data = NSKeyedArchiver.archivedDataWithRootObject(contacts)
-//            NSUserDefaults.standardUserDefaults().setObject(data, forKey: contactKey)
-            
             tableView.reloadData()
         }
     }
     
-//    func getSavedContacts() {
-//        self.contacts = defaults.objectForKey(contactKey) as! [Contact]
-//        self.tableView.reloadData()
-//    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        crewFetcher?.fetchLocal {
+//            
+//            if let contacts = $0 {
+//                self.contacts = contacts
+//            }
+//            else {
+//                
+//            }
+//        }
+    }
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        //self.getSavedContacts()
-        
         crewFetcher?.fetch {
             if let contacts = $0 {
                 self.contacts = contacts
@@ -58,7 +59,7 @@ class CrewTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         let contact = contacts[indexPath.row]
-        cell.textLabel?.text = contact.first_name
+        cell.textLabel?.text = contact.firstName
         cell.detailTextLabel?.text = contact.surname
         return cell
     }
@@ -71,7 +72,7 @@ class CrewTableViewController: UITableViewController {
         let detailViewController = storyboard.instantiateViewControllerWithIdentifier("detail") as! DetailContactViewController
         
         let contact = contacts[indexPath.row]
-        let contactViewModel = ContactViewModelFromContact(contact)
+        let contactViewModel = ContactViewModelFromContact(contact: contact)
         
         detailViewController.viewModel = contactViewModel
         

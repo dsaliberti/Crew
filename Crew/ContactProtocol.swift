@@ -9,10 +9,11 @@
 import Foundation
 
 protocol ContactProtocol {
-    var first_name : String { get }
+    init(contact:Contact)
+    var firstName : String { get }
     var surname : String { get }
     var address : String { get }
-    var phone_number : String { get }
+    var phoneNumber : String { get }
     var email : String { get }
     var createdAt : String { get }
     var updatedAt : String { get }

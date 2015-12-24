@@ -11,21 +11,21 @@ import UIKit
 class ContactViewModelFromContact: ContactProtocol {
     var contact: Contact
     
-    let first_name: String
+    let firstName: String
     let surname: String
     let address: String
-    let phone_number: String
+    let phoneNumber: String
     let email: String
     let createdAt: String
     let updatedAt: String
     
-    init(_ contact: Contact) {
+    required init(contact: Contact) {
         self.contact = contact
         
-        self.first_name = contact.first_name
+        self.firstName = contact.firstName
         self.surname = contact.surname
         self.address = contact.address
-        self.phone_number = contact.phone_number
+        self.phoneNumber = contact.phoneNumber
         self.email = contact.email
         
         //let dateFormatter = NSDateFormatter()

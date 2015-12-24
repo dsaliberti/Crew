@@ -22,10 +22,10 @@ class DetailContactViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.firstName.text = viewModel.first_name
+        self.firstName.text = viewModel.firstName
         self.surName.text = viewModel.surname
         self.address.text = viewModel.address
-        self.phoneNumber.text = viewModel.phone_number
+        self.phoneNumber.text = viewModel.phoneNumber
         self.email.text = viewModel.email
         
         self.createdAt.text = viewModel.createdAt

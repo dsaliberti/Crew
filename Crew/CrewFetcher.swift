@@ -9,26 +9,61 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 struct CrewFetcher {
     let networking: NetworkingProtocol
     
     func fetch(response: [Contact]? -> ()) {
-        
         networking.request { data in
             let contacts = data.map { self.decode($0) }
+            self.save(contacts!)
             response(contacts)
         }
     }
+//    func fetchLocal( response: [Object]? -> () ){
+//        
+//        let realm = try! Realm()
+//        response (  realm.objects(Contact) )
+//        
+//    }
     
     private func decode(data: NSData) -> [Contact] {
         let json = JSON(data: data)
         var contacts = [Contact]()
+        var contact :Contact
+        
         for (_, j) in json {
-            if let id = j["id"].int {
-                contacts.append(Contact(first_name: j["first_name"].string ?? "", surname: j["surname"].string ?? "", address: j["address"].string ?? "", phone_number: j["phone_number"].string ?? "", email: j["email"].string ?? "", id: id, createdAt: j["createdAt"].string ?? "", updatedAt: j["updatedAt"].string ?? ""))
-            }
+            
+            contact = Contact()
+            contact.firstName =     j["first_name"].stringValue
+            contact.surname =       j["surname"].stringValue
+            contact.address =       j["address"].string ?? ""
+            contact.phoneNumber =   j["phone_number"].string ?? ""
+            contact.email =         j["email"].string ?? ""
+            contact.id =            j["id"].int!
+            contact.createdAt =     j["createdAt"].string ?? ""
+            contact.updatedAt =     j["updatedAt"].string ?? ""
+            
+            contacts.append(contact)
+            
         }
         return contacts
+    }
+    func save(contacts:[Contact]){
+        
+        for contact in contacts {
+            createOrUpdate(contact)
+        }
+        
+    }
+    
+    func createOrUpdate(contact:Contact) {
+        if let key = contact["id"] as? Int { contact.id = key }
+        let realm = try! Realm()
+        
+        try! realm.write{
+            realm.add(contact, update:true)
+        }
     }
 }

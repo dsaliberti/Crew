@@ -6,15 +6,21 @@
 //  Copyright © 2015 dsaliberti. All rights reserved.
 //
 
-import UIKit
+import RealmSwift
 
-struct Contact {
-    let first_name: String
-    let surname: String
-    let address: String
-    let phone_number: String
-    let email: String
-    let id: Int
-    let createdAt: String
-    let updatedAt: String
+class Contact: Object {
+    
+    dynamic var firstName : String = ""
+    dynamic var surname : String = ""
+    dynamic var address : String = ""
+    dynamic var phoneNumber : String = ""
+    dynamic var email : String = ""
+    dynamic var id : Int = 0
+    dynamic var createdAt : String = ""
+    dynamic var updatedAt : String = ""
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
 }
