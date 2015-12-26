@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class CrewTableViewController: UITableViewController {
     
@@ -19,23 +20,23 @@ class CrewTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        crewFetcher?.fetchLocal {
-//            
-//            if let contacts = $0 {
-//                self.contacts = contacts
-//            }
-//            else {
-//                
-//            }
-//        }
+        crewFetcher?.fetchLocal {
+            
+            if let contacts = $0 {
+                self.contacts = contacts
+                self.tableView.reloadData()
+            }
+            else {
+                
+            }
+        }
     }
-    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         crewFetcher?.fetch {
             if let contacts = $0 {
-                self.contacts = contacts
+                //self.contacts = contacts
                 
             }
             else {
@@ -61,6 +62,12 @@ class CrewTableViewController: UITableViewController {
         let contact = contacts[indexPath.row]
         cell.textLabel?.text = contact.firstName
         cell.detailTextLabel?.text = contact.surname
+        
+        let url = NSURL( string : "http://api.adorable.io/avatars/500/\(contact.id).png" )
+        cell.imageView!.af_setImageWithURL(url!, placeholderImage: UIImage(named: "placeholder"), filter: nil, imageTransition: .CurlUp(0.3), completion: { (response) -> Void in
+            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        })
+        
         return cell
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

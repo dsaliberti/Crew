@@ -21,12 +21,20 @@ struct CrewFetcher {
             response(contacts)
         }
     }
-//    func fetchLocal( response: [Object]? -> () ){
-//        
-//        let realm = try! Realm()
-//        response (  realm.objects(Contact) )
-//        
-//    }
+    func fetchLocal( response: [Contact]? -> () ){
+        
+        let realm = try! Realm()
+        let results : Results<Contact> = realm.objects(Contact)
+        var contacts : [Contact] = [Contact]()
+        
+        for result in results {
+            let contact : Contact = (result)
+            contacts.append(contact)
+        }
+        
+        response ( contacts )
+        
+    }
     
     private func decode(data: NSData) -> [Contact] {
         let json = JSON(data: data)

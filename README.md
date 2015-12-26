@@ -5,9 +5,11 @@ A person collection for iOS
 
 ✅ get remote contacts
 
+- request error handling
+
 ✅ save it into a local database for offline access
 
-- retrieve from local database
+✅ retrieve from local database
 
 ✅ enters in a screen1 with a title and a list 
 
@@ -15,7 +17,7 @@ A person collection for iOS
 
 ✅ when user taps a cell, the navigation changes the current screen1 to a detail screen2
 
-✅ in the detail screen2 the user can change back de navigation, see a title and labels for the contact fields: first_name, surname, address, phone_number, email, createdAt and updatedAt
+✅ in the detail screen2 the user can change back the navigation, see a title and labels for the contact fields: first_name, surname, address, phone_number, email, createdAt and updatedAt
 
 ### Should
 - the contact should have an adorable avatar
