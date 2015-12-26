@@ -5,7 +5,9 @@ A person collection for iOS
 
 ✅ get remote contacts
 
-- save it in background for offline access
+✅ save it into a local database for offline access
+
+- retrieve from local database
 
 ✅ enters in a screen1 with a title and a list 
 
