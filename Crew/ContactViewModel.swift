@@ -56,7 +56,7 @@ class ContactViewModel: ContactProtocol {
         self.avatarImage = UIImage (named: "placeholder")!
         self.avatarUrl = NSURL( string : "http://api.adorable.io/avatars/500/\(self.contact.id).png" )!
         self.placeholderImage = UIImage(named: "placeholder")!
-        self.imageRadius = 50
+        self.imageRadius = 100
         
         
         
