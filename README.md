@@ -20,10 +20,10 @@ A person collection for iOS
 ✅ in the detail screen2 the user can change back the navigation, see a title and labels for the contact fields: first_name, surname, address, phone_number, email, createdAt and updatedAt
 
 ### Should
-- the contact should have an adorable avatar
+✅ the contact should have an adorable avatar
 
 ### Would be good
-- store local data using sqlite or realm databases
+✅ store local data using realm database
 
 ### The tests should cover
 - get remote fail
@@ -33,4 +33,4 @@ A person collection for iOS
 - get local empty
 
 Performance
-- measure the databases option speed access
+- measure the database read or write speeds
