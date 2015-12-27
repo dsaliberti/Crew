@@ -14,8 +14,9 @@
 		DD24DF891C26277A00F922DA /* CrewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD24DF881C26277A00F922DA /* CrewUITests.swift */; };
 		DDA0DDC61C27022E005CC5E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA0DDC51C27022E005CC5E5 /* Main.storyboard */; };
 		DDA0DDCD1C27A712005CC5E5 /* ContactProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0DDCC1C27A711005CC5E5 /* ContactProtocol.swift */; };
-		DDA0DDCF1C27B142005CC5E5 /* ContactViewModelFromContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0DDCE1C27B142005CC5E5 /* ContactViewModelFromContact.swift */; };
+		DDA0DDCF1C27B142005CC5E5 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0DDCE1C27B142005CC5E5 /* ContactViewModel.swift */; };
 		DDA0DDD11C27BB0A005CC5E5 /* DetailContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0DDD01C27BB0A005CC5E5 /* DetailContactViewController.swift */; };
+		DDCE346F1C2F692700D528BF /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCE346E1C2F692700D528BF /* placeholder@2x.png */; };
 		DDF584E71C26E97600BB41B7 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF584E61C26E97600BB41B7 /* Contact.swift */; };
 		DDF584E91C26EA3100BB41B7 /* CrewFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF584E81C26EA3100BB41B7 /* CrewFetcher.swift */; };
 		DDF584EC1C26ECBB00BB41B7 /* NetworkingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF584EB1C26ECBB00BB41B7 /* NetworkingProtocol.swift */; };
@@ -63,8 +64,9 @@
 		DD35E5351C26F8AF00554656 /* Crew-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Crew-Bridging-Header.h"; sourceTree = "<group>"; };
 		DDA0DDC51C27022E005CC5E5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DDA0DDCC1C27A711005CC5E5 /* ContactProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactProtocol.swift; sourceTree = "<group>"; };
-		DDA0DDCE1C27B142005CC5E5 /* ContactViewModelFromContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewModelFromContact.swift; sourceTree = "<group>"; };
+		DDA0DDCE1C27B142005CC5E5 /* ContactViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		DDA0DDD01C27BB0A005CC5E5 /* DetailContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailContactViewController.swift; sourceTree = "<group>"; };
+		DDCE346E1C2F692700D528BF /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@2x.png"; sourceTree = "<group>"; };
 		DDF584E61C26E97600BB41B7 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		DDF584E81C26EA3100BB41B7 /* CrewFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrewFetcher.swift; sourceTree = "<group>"; };
 		DDF584EB1C26ECBB00BB41B7 /* NetworkingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingProtocol.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		DD24DF641C26277A00F922DA /* Crew */ = {
 			isa = PBXGroup;
 			children = (
+				DDCE346E1C2F692700D528BF /* placeholder@2x.png */,
 				DD35E5351C26F8AF00554656 /* Crew-Bridging-Header.h */,
 				DD24DF651C26277A00F922DA /* AppDelegate.swift */,
 				DDF584F51C26F2B500BB41B7 /* CrewTableViewController.swift */,
@@ -179,7 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				DDA0DDCC1C27A711005CC5E5 /* ContactProtocol.swift */,
-				DDA0DDCE1C27B142005CC5E5 /* ContactViewModelFromContact.swift */,
+				DDA0DDCE1C27B142005CC5E5 /* ContactViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			files = (
 				DDA0DDC61C27022E005CC5E5 /* Main.storyboard in Resources */,
 				DD24DF731C26277A00F922DA /* LaunchScreen.storyboard in Resources */,
+				DDCE346F1C2F692700D528BF /* placeholder@2x.png in Resources */,
 				DD24DF701C26277A00F922DA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,7 +407,7 @@
 				DDF584F01C26ED5A00BB41B7 /* ContactsMap.swift in Sources */,
 				DDA0DDCD1C27A712005CC5E5 /* ContactProtocol.swift in Sources */,
 				DDF584EC1C26ECBB00BB41B7 /* NetworkingProtocol.swift in Sources */,
-				DDA0DDCF1C27B142005CC5E5 /* ContactViewModelFromContact.swift in Sources */,
+				DDA0DDCF1C27B142005CC5E5 /* ContactViewModel.swift in Sources */,
 				DDF584E91C26EA3100BB41B7 /* CrewFetcher.swift in Sources */,
 				DDF584EE1C26ED0C00BB41B7 /* Network.swift in Sources */,
 				DDF584F21C26F1C100BB41B7 /* SwinjectStoryboard+Setup.swift in Sources */,

@@ -58,7 +58,7 @@ struct CrewFetcher {
         }
         return contacts
     }
-    func save(contacts:[Contact]){
+    private func save(contacts:[Contact]){
         
         for contact in contacts {
             createOrUpdate(contact)
@@ -66,7 +66,7 @@ struct CrewFetcher {
         
     }
     
-    func createOrUpdate(contact:Contact) {
+    private func createOrUpdate(contact:Contact) {
         if let key = contact["id"] as? Int { contact.id = key }
         let realm = try! Realm()
         

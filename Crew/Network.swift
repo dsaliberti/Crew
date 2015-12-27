@@ -12,9 +12,14 @@ import Alamofire
 struct Network : NetworkingProtocol {
     func request(response: NSData? -> ()) {
         Alamofire.request(.GET, ContactsMap.url )
-            .response { _, _, data, _ in
-                response(data)
+            .response { _, _, data, error in
+                if let error = error {
+                    print("Failed with error: \(error)")
+                } else {
+                    response(data)
+                }
         }
     }
+    
 }
 

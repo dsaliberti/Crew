@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class DetailContactViewController: UIViewController {
     
@@ -18,7 +19,8 @@ class DetailContactViewController: UIViewController {
     @IBOutlet var createdAt: UILabel!
     @IBOutlet var updatedAt: UILabel!
     
-    var viewModel : ContactViewModelFromContact!
+    @IBOutlet var avatarImage: UIImageView!
+    var viewModel : ContactViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,16 @@ class DetailContactViewController: UIViewController {
         
         self.createdAt.text = viewModel.createdAt
         self.updatedAt.text = viewModel.updatedAt
+        
+        self.avatarImage?.af_setImageWithURL(viewModel.avatarUrl,
+            placeholderImage: viewModel.placeholderImage,
+            filter: RoundedCornersFilter (
+                radius: viewModel.imageRadius
+            ),
+            imageTransition: .CrossDissolve(1),
+            completion: { (response) -> Void in
+        })
+        
     }
     
     override func viewWillAppear(animated: Bool) {

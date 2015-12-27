@@ -24,7 +24,7 @@ class CrewTableViewController: UITableViewController {
             
             if let contacts = $0 {
                 self.contacts = contacts
-                self.tableView.reloadData()
+                
             }
             else {
                 
@@ -36,7 +36,7 @@ class CrewTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         crewFetcher?.fetch {
             if let contacts = $0 {
-                //self.contacts = contacts
+                self.contacts = contacts
                 
             }
             else {
@@ -59,13 +59,19 @@ class CrewTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        let contact = contacts[indexPath.row]
-        cell.textLabel?.text = contact.firstName
-        cell.detailTextLabel?.text = contact.surname
         
-        let url = NSURL( string : "http://api.adorable.io/avatars/500/\(contact.id).png" )
-        cell.imageView!.af_setImageWithURL(url!, placeholderImage: UIImage(named: "placeholder"), filter: nil, imageTransition: .CurlUp(0.3), completion: { (response) -> Void in
-            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        let contact = contacts[indexPath.row]
+        let contactViewModel = ContactViewModel(contact: contact)
+        
+        cell.textLabel?.text = contactViewModel.firstName
+        cell.detailTextLabel?.text = contactViewModel.surname
+        cell.imageView?.af_setImageWithURL(contactViewModel.avatarUrl,
+            placeholderImage: contactViewModel.placeholderImage,
+            filter: RoundedCornersFilter (
+                radius: contactViewModel.imageRadius
+            ),
+            imageTransition: .CrossDissolve(1),
+            completion: { (response) -> Void in
         })
         
         return cell
@@ -79,7 +85,7 @@ class CrewTableViewController: UITableViewController {
         let detailViewController = storyboard.instantiateViewControllerWithIdentifier("detail") as! DetailContactViewController
         
         let contact = contacts[indexPath.row]
-        let contactViewModel = ContactViewModelFromContact(contact: contact)
+        let contactViewModel = ContactViewModel(contact: contact)
         
         detailViewController.viewModel = contactViewModel
         
