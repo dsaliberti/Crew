@@ -1,4 +1,5 @@
-platform :ios, '9.2'
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
 use_frameworks!
 
 target 'Crew' do
