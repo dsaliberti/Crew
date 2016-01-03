@@ -26,11 +26,9 @@ A person collection for iOS
 ✅ store local data using realm database
 
 ### The tests should cover
-- get remote fail
-- get remote empty
-- get remote wierd
-- get local fail *assert
-- get local empty
+✅ get valid data and decode to valid objects
+✅ set this data to a local database 
+
 
 Performance
 - measure the database read or write speeds
