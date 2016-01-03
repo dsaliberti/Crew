@@ -16,7 +16,9 @@ struct CrewFetcher {
     
     func fetch(response: [Contact]? -> ()) {
         networking.request { data in
-            let contacts = data.map { self.decode($0) }
+            let contacts = data.map {
+                self.decode($0)
+            }
             self.save(contacts!)
             response(contacts)
         }
@@ -35,14 +37,19 @@ struct CrewFetcher {
         response ( contacts )
         
     }
+    func save(contacts:[Contact]){
+        
+        for contact in contacts {
+            createOrUpdate(contact)
+        }
+        
+    }
     
     private func decode(data: NSData) -> [Contact] {
-        let json = JSON(data: data)
+        let json:JSON = JSON(data: data)
         var contacts = [Contact]()
         var contact :Contact
-        
         for (_, j) in json {
-            
             contact = Contact()
             contact.firstName =     j["first_name"].stringValue
             contact.surname =       j["surname"].stringValue
@@ -54,16 +61,8 @@ struct CrewFetcher {
             contact.updatedAt =     j["updatedAt"].string ?? ""
             
             contacts.append(contact)
-            
         }
         return contacts
-    }
-    private func save(contacts:[Contact]){
-        
-        for contact in contacts {
-            createOrUpdate(contact)
-        }
-        
     }
     
     private func createOrUpdate(contact:Contact) {
