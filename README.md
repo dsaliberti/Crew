@@ -1,5 +1,6 @@
 # Crew
-A person collection for iOS
+A contact collection for iOS made in Swift.
+It uses dependency injection, protocols, local database storage, get data from a remote api and shows an adorable avatar for each contact.
 
 ### Must
 
