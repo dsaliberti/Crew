@@ -21,12 +21,8 @@ class CrewTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         crewFetcher?.fetchLocal {
-            
             if let contacts = $0 {
                 self.contacts = contacts
-                
-            }
-            else {
                 
             }
         }

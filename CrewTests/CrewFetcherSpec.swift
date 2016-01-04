@@ -80,7 +80,7 @@ class CrewFetcherSpec: QuickSpec {
                 fetcher.save( [contact] )
                 
                 let testRealm = try! Realm()
-                expect( contact ).to( equal( testRealm.objects(Contact).last!  ) )
+                expect( contact.firstName ).to( equal( testRealm.objects(Contact).filter("id = 333").first!.firstName ) )
             }
         }
     }

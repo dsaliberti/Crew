@@ -27,8 +27,11 @@ A person collection for iOS
 
 ### The tests should cover
 ✅ get valid data and decode to valid objects
+
 ✅ set this data to a local database 
 
+✅ screen1 presents a given contact
 
-Performance
-- measure the database read or write speeds
+- screen2 present a valid contact
+
+
