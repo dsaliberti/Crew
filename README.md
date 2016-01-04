@@ -32,6 +32,6 @@ A person collection for iOS
 
 ✅ screen1 presents a given contact
 
-- screen2 present a valid contact
+- screen2 presents the correct contact information
 
 
