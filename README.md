@@ -5,8 +5,6 @@ A person collection for iOS
 
 ✅ get remote contacts
 
-- request error handling
-
 ✅ save it into a local database for offline access
 
 ✅ retrieve from local database
